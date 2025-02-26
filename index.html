@@ -162,6 +162,7 @@
             <input type="text" id="uid" placeholder="Enter Your UID" required><br><br>
             <button type="submit">Register</button>
         </form>
+        <p id="registration-message" style="color: green; display: none;">Registration Successful!</p>
     </section>
 
     <section id="payment">
@@ -181,6 +182,32 @@
         </form>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+// Function to save the teams to localStorage
+function saveTeam(teamName, teamLeader, uid) {
+    let teams = JSON.parse(localStorage.getItem('teams')) || [];
+    teams.push({ teamName, teamLeader, uid });
+    localStorage.setItem('teams', JSON.stringify(teams));
+}
+
+// Handle form submission on registration page
+document.getElementById('registration-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    let teamName = document.getElementById('team-name').value;
+    let teamLeader = document.getElementById('team-leader').value;
+    let uid = document.getElementById('uid').value;
+    
+    if (teamName && teamLeader && uid) {
+        saveTeam(teamName, teamLeader, uid);  // Save the new team with UID
+        document.getElementById('registration-message').style.display = 'block';  // Show success message
+        setTimeout(function() {
+            document.getElementById('registration-message').style.display = 'none';  // Hide message after a few seconds
+        }, 3000); // Hide after 3 seconds
+    } else {
+        alert('Please fill in all fields!');
+    }
+});
+    </script>
 </body>
 </html>
