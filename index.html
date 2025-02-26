@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brother's Tournament</title>
     <link rel="stylesheet" href="styles.css">
-   
-
 </head>
 <body>
     <header>
@@ -20,15 +18,16 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="about">
         <h2>About the Tournament</h2>
         <p>Welcome to the ultimate Free Fire tournament. Compete with top teams and win exciting prizes!</p>
     </section>
-    
+
     <section id="schedule">
         <h2>Match Schedule</h2>
-        <h2>Day 1</h2>
+
+        <h3>Day 1: Round of 16</h3>
         <table>
             <tr>
                 <th>Match</th>
@@ -36,51 +35,48 @@
                 <th>Teams</th>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 1</td>
                 <td>3:00 PM</td>
                 <td>Team 1 vs Team 2</td>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 2</td>
                 <td>3:30 PM</td>
                 <td>Team 3 vs Team 4</td>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 3</td>
                 <td>4:00 PM</td>
                 <td>Team 5 vs Team 6</td>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 4</td>
                 <td>4:30 PM</td>
                 <td>Team 7 vs Team 8</td>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 5</td>
                 <td>5:00 PM</td>
                 <td>Team 9 vs Team 10</td>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 6</td>
                 <td>5:30 PM</td>
                 <td>Team 11 vs Team 12</td>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 7</td>
                 <td>6:00 PM</td>
                 <td>Team 13 vs Team 14</td>
             </tr>
             <tr>
-                <td>Round of 16</td>
+                <td>Round 8</td>
                 <td>6:30 PM</td>
                 <td>Team 15 vs Team 16</td>
             </tr>
         </table>
-   
 
-   
-        <h2>Match Schedule</h2>
-        <h2>Day 2</h2>
+        <h3>Day 2: Quarter Finals</h3>
         <table>
             <tr>
                 <th>Match</th>
@@ -88,31 +84,28 @@
                 <th>Teams</th>
             </tr>
             <tr>
-                <td>Quarter Finals</td>
+                <td>Quarter Final 1</td>
                 <td>3:00 PM</td>
                 <td>Team # vs Team #</td>
             </tr>
             <tr>
-                <td>Quarter Finals</td>
+                <td>Quarter Final 2</td>
                 <td>3:30 PM</td>
                 <td>Team # vs Team #</td>
             </tr>
             <tr>
-                <td>Quarter Finals</td>
+                <td>Quarter Final 3</td>
                 <td>4:00 PM</td>
                 <td>Team # vs Team #</td>
             </tr>
             <tr>
-                <td>Quarter Finals</td>
+                <td>Quarter Final 4</td>
                 <td>4:30 PM</td>
                 <td>Team # vs Team #</td>
             </tr>
         </table>
 
-    
-
-        <h2>Match Schedule</h2>
-        <h2>Day 3</h2>
+        <h3>Day 3: Semi Finals</h3>
         <table>
             <tr>
                 <th>Match</th>
@@ -120,20 +113,18 @@
                 <th>Teams</th>
             </tr>
             <tr>
-                <td>Semi Finals</td>
+                <td>Semi Final 1</td>
                 <td>3:00 PM</td>
                 <td>Team # vs Team #</td>
             </tr>
             <tr>
-                <td>Semi Finals</td>
+                <td>Semi Final 2</td>
                 <td>3:30 PM</td>
                 <td>Team # vs Team #</td>
             </tr>
         </table>
 
-
-        <h2>Match Schedule</h2>
-        <h2>Day 4</h2>
+        <h3>Day 4: Finals</h3>
         <table>
             <tr>
                 <th>Match</th>
@@ -141,37 +132,28 @@
                 <th>Teams</th>
             </tr>
             <tr>
-                <td>Finals</td>
+                <td>Final</td>
                 <td>5:00 PM</td>
                 <td>Team # vs Team #</td>
             </tr>
         </table>
     </section>
-    
 
     <section id="register">
-           <h2>Register Your Team (required payment)</h2>
-    <form id="registration-form">
-        <input type="text" id="team-name" placeholder="Team Name" required><br><br>
-        <input type="text" id="team-leader" placeholder="Team Leader (game name)" required><br><br>
-        <input type="text" id="uid" placeholder="Enter Your UID" required><br><br>
-        <button type="submit">Register</button>
+        <h2>Register Your Team (required payment)</h2>
+        <form id="registration-form">
+            <input type="text" id="team-name" placeholder="Team Name" required><br><br>
+            <input type="text" id="team-leader" placeholder="Team Leader (game name)" required><br><br>
+            <input type="text" id="uid" placeholder="Enter Your UID" required><br><br>
+            <button type="submit">Register</button>
         </form>
-    
+
         <h3>Registered Teams</h3>
         <ul id="team-list"></ul>
-        <p></p>UID: 2826213202 - Team Newar (Leader: LW NEWAR)</p>
-        <!-- Edit Teams Button (initially visible to anyone) -->
         <button id="edit-teams-btn">Edit Teams</button>
-        
-        <!-- Clear List Button, initially hidden -->
         <button id="clear-list-btn" style="display: none;">Clear All Teams</button>
     </section>
-    
-  
-    
-    
-    
+
     <section id="payment">
         <h2>Payment via eSewa</h2>
         <p>To complete your registration, please pay the entry fee using eSewa.</p>
@@ -179,7 +161,7 @@
         <p><strong>Amount:</strong> NPR XXXX</p>
         <p>Scan the QR code below or click the payment link to proceed.</p>
         <div>
-           <button> <img src="esewa.jpg" alt="eSewa QR Code" width="200"></button>
+            <button><img src="esewa.jpg" alt="eSewa QR Code" width="200"></button>
         </div>
         <p><a href="https://esewa.com.np/merchant-payment" target="_blank">Pay via eSewa</a></p>
         <p>After payment, upload the transaction screenshot.</p>
@@ -188,9 +170,7 @@
             <button type="submit">Submit Payment</button>
         </form>
     </section>
-  
 
-    
     <script src="script.js"></script>
 </body>
 </html>
