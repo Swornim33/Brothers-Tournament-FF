@@ -7,7 +7,7 @@ function loadTeams() {
     
     teams.forEach(function(team, index) {
         let newTeam = document.createElement('li');
-        newTeam.textContent = UID: ${team.uid} - ${team.teamName} (Leader: ${team.teamLeader});
+        newTeam.textContent = `UID: ${team.uid} - ${team.teamName} (Leader: ${team.teamLeader})`;
 
         // Create the delete button, but it will only be shown if admin is verified
         let deleteButton = document.createElement('button');
