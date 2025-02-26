@@ -10,15 +10,29 @@
     <div id="result"></div>
 
     <script>
-        // Retrieve the data from localStorage
-        const username = localStorage.getItem('username');
+        // Get the query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const teamName = urlParams.get('team-name');
+        const teamLeader = urlParams.get('team-leader');
+        const uid = urlParams.get('uid');
 
-        // Display the result
-        if (username) {
-            document.getElementById('result').innerText = `Submitted Username: ${username}`;
-        } else {
-            document.getElementById('result').innerText = 'No data submitted.';
+        // Display the results
+        let resultText = '';
+        if (teamName) {
+            resultText += `Team Name: ${teamName}<br>`;
         }
+        if (teamLeader) {
+            resultText += `Team Leader: ${teamLeader}<br>`;
+        }
+        if (uid) {
+            resultText += `UID: ${uid}`;
+        }
+
+        if (resultText === '') {
+            resultText = 'No data submitted.';
+        }
+
+        document.getElementById('result').innerHTML = resultText;
     </script>
 </body>
 </html>
