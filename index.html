@@ -164,7 +164,18 @@
         </form>
         <p id="registration-message" style="color: green; display: none;">Registration Successful!</p>
     </section>
-
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the default form submission
+        const username = document.getElementById('username').value;
+        
+        // Store the form data in localStorage
+        localStorage.setItem('username', username);
+        
+        // Redirect to result.html
+        window.location.href = 'result.html';
+    });
+</script>
     <section id="payment">
         <h2>Payment via eSewa</h2>
         <p>To complete your registration, please pay the entry fee using eSewa.</p>
