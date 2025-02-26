@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Result</title>
+    <title>Registered Teams</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Registration Result</h1>
+        <h1>Registered Teams</h1>
     </header>
 
     <section id="result">
-        <h2>Team Registration Details</h2>
-        <p><strong>Team Name:</strong> <span id="result-team-name">Loading...</span></p>
-        <p><strong>Team Leader:</strong> <span id="result-team-leader">Loading...</span></p>
-        <p><strong>UID:</strong> <span id="result-uid">Loading...</span></p>
+        <h2>All Registered Teams</h2>
+        <ul id="team-list"></ul> <!-- This will display the registered teams -->
     </section>
 
     <script>
-        // Retrieve the data from localStorage
-        let teamName = localStorage.getItem('teamName');
-        let teamLeader = localStorage.getItem('teamLeader');
-        let uid = localStorage.getItem('uid');
+// Function to load and display the registered teams from localStorage
+function loadTeams() {
+    let teamList = document.getElementById('team-list');
+    teamList.innerHTML = ''; // Clear the current list
+    
+    let teams = JSON.parse(localStorage.getItem('teams')) || [];
+    
+    if (teams.length === 0) {
+        teamList.innerHTML = '<li>No teams registered yet.</li>';
+    } else {
+        teams.forEach(function(team) {
+            let newTeam = document.createElement('li');
+            newTeam.textContent = `UID: ${team.uid} - ${team.teamName} (Leader: ${team.teamLeader})`;
+            teamList.appendChild(newTeam);
+        });
+    }
+}
 
-        // Check if the data exists
-        if (teamName && teamLeader && uid) {
-            // Display the data on the page
-            document.getElementById('result-team-name').textContent = teamName;
-            document.getElementById('result-team-leader').textContent = teamLeader;
-            document.getElementById('result-uid').textContent = uid;
-
-            // Optionally clear the data after displaying
-            localStorage.removeItem('teamName');
-            localStorage.removeItem('teamLeader');
-            localStorage.removeItem('uid');
-        } else {
-            // If data doesn't exist, redirect back to the registration page
-            alert("No registration data found. Please register your team first.");
-            window.location.href = 'index.html'; // Change to your registration page URL
-        }
+// Load teams when the page is loaded
+window.onload = function() {
+    loadTeams();  // Load and display all registered teams
+};
     </script>
 </body>
 </html>
