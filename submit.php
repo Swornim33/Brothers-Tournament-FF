@@ -5,7 +5,7 @@ $team_leader = $_POST['team-leader'];
 $uid = $_POST['uid'];
 
 // Website owner's email address
-$to = "owner@example.com"; // Replace with the website owner's email address
+$to = "swornimsuwal3@gmail.com"; // Replace with the website owner's email address
 
 // Subject of the email
 $subject = "New Tournament Registration: $team_name";
