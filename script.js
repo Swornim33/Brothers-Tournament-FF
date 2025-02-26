@@ -105,3 +105,20 @@ document.getElementById('registration-form').addEventListener('submit', function
 window.onload = function() {
     loadTeams();
 };
+// Handle form submission
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission to the server
+
+            // Get the form data
+            let teamName = document.getElementById('team-name').value;
+            let teamLeader = document.getElementById('team-leader').value;
+            let uid = document.getElementById('uid').value;
+
+            // Save the data in localStorage
+            localStorage.setItem('teamName', teamName);
+            localStorage.setItem('teamLeader', teamLeader);
+            localStorage.setItem('uid', uid);
+
+            // Redirect to result.html
+            window.location.href = 'result.html';
+        });
