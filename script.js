@@ -82,7 +82,7 @@ function clearTeamList() {
     loadTeams(); // Reload the list after clearing
 }
 
-// Handle form submission
+// Handle form submission on registration page
 document.getElementById('registration-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -92,33 +92,13 @@ document.getElementById('registration-form').addEventListener('submit', function
     
     if (teamName && teamLeader && uid) {
         saveTeam(teamName, teamLeader, uid);  // Save the new team with UID
-        loadTeams();  // Reload the list of teams
-        
-        document.getElementById('team-name').value = '';
-        document.getElementById('team-leader').value = '';
-        document.getElementById('uid').value = '';
-        alert("Team Registered Successfully!");
+        window.location.href = 'result.html';  // Redirect to result page
     }
 });
 
 // Load teams when the page is loaded
 window.onload = function() {
-    loadTeams();
+    if (document.getElementById('team-list')) {
+        loadTeams(); // Load teams on result page
+    }
 };
-// Handle form submission
-        document.getElementById('registration-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission to the server
-
-            // Get the form data
-            let teamName = document.getElementById('team-name').value;
-            let teamLeader = document.getElementById('team-leader').value;
-            let uid = document.getElementById('uid').value;
-
-            // Save the data in localStorage
-            localStorage.setItem('teamName', teamName);
-            localStorage.setItem('teamLeader', teamLeader);
-            localStorage.setItem('uid', uid);
-
-            // Redirect to result.html
-            window.location.href = 'result.html';
-        });
