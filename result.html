@@ -16,29 +16,6 @@
         <ul id="team-list"></ul> <!-- This will display the registered teams -->
     </section>
 
-    <script>
-// Function to load and display the registered teams from localStorage
-function loadTeams() {
-    let teamList = document.getElementById('team-list');
-    teamList.innerHTML = ''; // Clear the current list
-    
-    let teams = JSON.parse(localStorage.getItem('teams')) || [];
-    
-    if (teams.length === 0) {
-        teamList.innerHTML = '<li>No teams registered yet.</li>';
-    } else {
-        teams.forEach(function(team) {
-            let newTeam = document.createElement('li');
-            newTeam.textContent = `UID: ${team.uid} - ${team.teamName} (Leader: ${team.teamLeader})`;
-            teamList.appendChild(newTeam);
-        });
-    }
-}
-
-// Load teams when the page is loaded
-window.onload = function() {
-    loadTeams();  // Load and display all registered teams
-};
-    </script>
+   
 </body>
 </html>
