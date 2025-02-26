@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Result</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Registration Result</h1>
+    </header>
+
+    <section id="result">
+        <h2>Team Registration Details</h2>
+        <p><strong>Team Name:</strong> <span id="result-team-name"></span></p>
+        <p><strong>Team Leader:</strong> <span id="result-team-leader"></span></p>
+        <p><strong>UID:</strong> <span id="result-uid"></span></p>
+    </section>
+
+    <script>
+        // Retrieve the data from localStorage
+        let teamName = localStorage.getItem('teamName');
+        let teamLeader = localStorage.getItem('teamLeader');
+        let uid = localStorage.getItem('uid');
+
+        // Display the data on the page
+        document.getElementById('result-team-name').textContent = teamName;
+        document.getElementById('result-team-leader').textContent = teamLeader;
+        document.getElementById('result-uid').textContent = uid;
+    </script>
+</body>
+</html>
