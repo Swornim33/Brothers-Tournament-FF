@@ -82,3 +82,9 @@ form input, form button {
     border-right: none;
     border-bottom: 2px solid black;
 }
+.logo {
+    width: 50px; 
+    height: auto;
+    padding-right: 60%;
+
+}
